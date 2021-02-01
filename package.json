@@ -1,0 +1,24 @@
+{
+  "name": "apple_ceos_sql",
+  "version": "1.0.0",
+  "description": "This exercise creates a schema file and seed file to create a table in PostgreSQL.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:create": "createdb apple_ceos",
+    "db:destroy": "dropdb apple_ceos",
+    "db:init": "psql -f schema.sql apple_ceos",
+    "db:seed": "psql -f seed.sql apple_ceos"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-manack/apple_ceos_sql.git"
+  },
+  "keywords": [],
+  "author": "John Manack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/john-manack/apple_ceos_sql/issues"
+  },
+  "homepage": "https://github.com/john-manack/apple_ceos_sql#readme"
+}
