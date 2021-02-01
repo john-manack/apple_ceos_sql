@@ -1,0 +1,1 @@
+INSERT INTO apple_ceos (name, slug, year) VALUES ('Steve Jobs', 'steve_jobs', 1976), ('Mike Markkula', 'mike_markkula', 1977), ('')
