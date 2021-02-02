@@ -1,5 +1,4 @@
 'use strict';
-
 const HTTP = require('http');
 
 const HOSTNAME = '127.0.0.1',
@@ -19,4 +18,4 @@ const SERVER = HTTP.createServer(app);
 
 SERVER.listen(PORT, HOSTNAME, () => {
     console.log(`Server running at http://${HOSTNAME}:${PORT}`);
-})
+});
