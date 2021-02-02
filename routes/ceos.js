@@ -1,15 +1,16 @@
 'use strict';
 
 const express = require('express'),
-    router = express.Router();
+    router = express.Router(),
+    ceoModel = require('../models/ceoModel')
 
-const ceosModel = require('../db')
+router.get('/', async (req, res) => {
+    const ceosData = await ceoModel.getAll();
 
-router.get('/', (req, res) => {
     res.render('template', {
         locals: {
             title: "List of Apple CEOs",
-            data: ceosModel,
+            data: ceosData,
         },
         partials: {
             body: 'partials/ceo-list',

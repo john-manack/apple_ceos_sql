@@ -9,7 +9,7 @@ const express = require('express'),
 
 const es6Renderer = require('express-es6-template-engine');
 app.engine('html', es6Renderer);
-app.set('view', 'templates');
+app.set('views', 'templates');
 app.set('view engine', 'html');
 
 app.use(express.static('public'));
@@ -19,3 +19,9 @@ const SERVER = HTTP.createServer(app);
 SERVER.listen(PORT, HOSTNAME, () => {
     console.log(`Server running at http://${HOSTNAME}:${PORT}`);
 });
+
+const rootController = require('./routes/index');
+const ceosController = require('./routes/ceos');
+
+app.use('/', rootController);
+app.use('/ceos', ceosController);
