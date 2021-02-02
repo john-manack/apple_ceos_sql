@@ -18,13 +18,10 @@ router.get('/', async (req, res) => {
     });
 });
 
-router.get('/:slug', (req, res) => {
+router.get('/:slug', async (req, res) => {
     const { slug } = req.params; // DECONSTRUCTING
-    const executive = ceosModel.find((executive) => {
-        if (executive.slug === slug) {
-            return executive;
-        }
-    });
+    const executive = await ceoModel.getBySlug(slug);
+
     if (executive) {
         res.render('template', {
             locals: {

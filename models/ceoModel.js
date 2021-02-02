@@ -13,6 +13,11 @@ class CEOModel {
         const response = await db.any(`SELECT * FROM apple_ceos;`);
         return response;
     }
+
+    static async getBySlug(slug) {
+        const response = await db.one(`SELECT * FROM apple_ceos WHERE slug = '${slug}';`);
+        return response;
+    }
 }
 
 module.exports = CEOModel;
