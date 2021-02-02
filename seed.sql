@@ -5,5 +5,5 @@ INSERT INTO apple_ceos (name, slug, year) VALUES
 ('John Sculley', 'john_sculley', 1983), 
 ('Michael Spindler', 'michael_spindler', 1993), 
 ('Gil Amelio', 'gil_amelio', 1996), 
-('Steve Jobs', 'steve_jobs2', 1997), 
+('Steve Jorbs', 'steve_jobs2', 1997), 
 ('Tim Cook', 'tim_cook', 2011);
