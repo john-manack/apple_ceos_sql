@@ -49,7 +49,7 @@ router.post('/', async (req, res) => {
     const response = await ceoModel.addEntry(ceo_name, slug, ceo_year);
     console.log("post data response is: ", response)
     if (response.rowCount >= 1) {
-        res.redirect('./ceos')
+        res.redirect('/ceos')
     } else {
         res.sendStatus(500);
     }
@@ -61,7 +61,11 @@ router.post('/delete', async (req, res) => {
     const ceo = new ceoModel(ceo_id);
     const response = await ceo.deleteEntry();
     console.log('Delete response is: ', response);
-    res.sendStatus(200);
+    if (response.rowCount >= 1) {
+        res.redirect('/ceos')
+    } else {
+        res.sendStatus(500);
+    }
 });
 
 module.exports = router;
